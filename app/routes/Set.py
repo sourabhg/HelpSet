@@ -18,7 +18,7 @@ def createSet():
 
 	return write_response({"set_id" : set_id,"values" : helpset.listSet()})
 
-@app.route('/v1/helpshift/sets/delete/<int:set_id>',methods=['POST'])
+@app.route('/v1/helpshift/sets/delete/<int:set_id>',methods=['GET'])
 def deleteSet(set_id):
 	if server_sets.get(set_id) is not None:
 		res = server_sets.get(set_id).delete()
